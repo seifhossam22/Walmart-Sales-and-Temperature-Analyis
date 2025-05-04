@@ -1,79 +1,74 @@
-
-# Twitter Data Analysis using Python
-==================================
+# Sales and Temperature Data Analysis using Pandas
 
 # Overview
---------
-This project demonstrates the use of Python for data science tasks by analyzing a dataset containing various Twitter metrics. The project focuses on writing custom Python functions, handling data inconsistencies, and leveraging iterators, list comprehensions, and lambda functions to extract insights from Twitter data.
+This project demonstrates data cleaning, transformation, and analysis using Python's Pandas and Matplotlib libraries. 
+We analyze two real-world datasets: Walmart sales data and global temperature time series, focusing on data quality, statistical analysis, and visualization.
 
 # Objectives
-----------
-- Practice Python function writing, including default arguments, multiple returns, and error handling.
-- Use iterators and list comprehensions for efficient data processing.
-- Apply lambda functions and demonstrate variable scoping.
-- Analyze trending keywords and summarize key findings.
+- Practice data cleaning: remove duplicates, handle outliers, fix inconsistent casing, trim spaces, and standardize date formats.
+- Extract and filter data for specific stores, departments, and countries.
+- Perform data transformation and statistical analysis.
+- Visualize trends and relationships using plots.
+- (Bonus) Explore the correlation between sales and temperature.
 
-# Dataset
--------
-Assumed columns in the Twitter dataset:
-- Tweet Date
-- Tweet Text
-- Retweet Count
-- Like Count
-- Hashtags
+# Datasets
+1. **Walmart Sales Data**: Columns include `Date`, `Store`, `Department`, `Sales`, `Quantity`.
+2. **Global Temperature Data**: Columns include `Date`, `Global_Temperature`, `City`, `Country`.
 
 # Requirements
-------------
 - Python 3.x
 - pandas
-- (Optional) matplotlib for data visualization
+- matplotlib
 
 # Key Tasks and Methods
----------------------
-1. Data Importing and Cleaning
-   - Import the Twitter dataset into a Pandas DataFrame.
-   - Handle missing data, outliers, and string paddings to ensure data quality.
+1. Data Importing
+   - Load both datasets into Pandas DataFrames.
 
-2. Function Writing
-   - Write a function to filter tweets based on a given keyword.
-   - Write another function to calculate average retweet and like counts within a specified date range.
-   - Implement default arguments, multiple return values, and error handling.
+2. Data Cleaning
+   - Remove duplicate rows.
+   - Handle outliers in `Sales` and `Global_Temperature` using quantile capping.
+   - Standardize casing in `City` and `Country` columns.
+   - Trim extra spaces from city and country names.
+   - Convert `Date` columns to datetime objects and sort data by date.
 
-3. Iterators and List Comprehensions
-   - Create an iterator to traverse tweet texts and count occurrences of a keyword.
-   - Use a list comprehension to extract hashtags from tweet texts.
+3. Data Extraction and Filtering
+   - Extract data for a particular store (e.g., Store 2) and department (e.g., Department 4) from Walmart data.
+   - (Optional) Filter global temperature data for a specific country.
 
-4. Lambda Functions and Scoping
-   - Use a lambda function to extract the year from the tweet date.
-   - Demonstrate variable scoping with global and local variables.
+4. Data Transformation
+   - Add a `Revenue` column to Walmart data, calculated as `Sales * Quantity`.
 
-5. Case Study and Analysis
-   - Combine the above techniques to analyze trending keywords over different time periods.
-   - Summarize findings in a concise report.
+5. Statistical Analysis
+   - Compute summary statistics (mean, median, std, etc.) for `Sales` and `Revenue` for filtered Walmart data.
+   - Find highest and lowest global temperatures for a selected country.
+
+6. Data Visualization
+   - Create line plots showing sales trends for selected store/department.
+   - Create line plots for monthly average temperature for a selected country.
+
+7. Bonus Analysis
+   - Merge Walmart sales and global temperature data on `Date` to explore potential correlations.
 
 # Deliverables
-------------
-- A Python script (.py) containing all code, functions, and comments.
-- A summary report detailing the analysis process and key insights.
+- A Jupyter Notebook containing all code, comments, and plots.
+- A report summarizing the analysis, findings, and visualizations.
 
 # Evaluation Criteria
--------------------
-- Code Quality: Well-organized, readable, and documented code.
-- Function Writing: Effective use of custom functions and error handling.
-- Iterators & List Comprehensions: Efficient and correct implementations.
-- Case Study: Insightful and well-executed final analysis.
+- **Code Quality**: Well-organized, readable, and commented code.
+- **Data Manipulation**: Effective data cleaning, extraction, and transformation.
+- **Statistical Analysis**: Sound and well-explained statistics.
+- **Data Visualization**: Clear, well-labeled, and insightful plots.
+- **Report**: Thorough summary and actionable conclusions.
 
 # How to Use
-----------
-1. Ensure Python 3.x and required libraries (pandas, matplotlib) are installed.
-2. Place the Twitter dataset CSV file in the project directory.
-3. Run the provided Python script to perform the analysis.
-4. Review the generated report for insights and findings.
+1. Ensure Python 3.x and required libraries are installed.
+2. Place the datasets (`task_walmart_sales_data.csv` and `task_global_temperature_data.csv`) in the project directory.
+3. Open and run the Jupyter Notebook to perform the analysis.
+4. Review the generated plots and report for insights.
 
 # Summary
--------
-This project highlights essential Python skills for data science, including data cleaning, function writing, and advanced data processing techniques. By analyzing Twitter data, the project demonstrates how to extract actionable insights and trends from real-world social media datasets.
+This project showcases practical data science skills, including data cleaning, transformation, statistical analysis, and visualization. 
+By working with real-world sales and temperature data, it provides insights into retail performance and environmental trends, and demonstrates how to prepare data for further analytics or machine learning.
 
 # Author
 Seif Hossam Eldeen
-
